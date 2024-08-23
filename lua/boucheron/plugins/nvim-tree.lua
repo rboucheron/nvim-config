@@ -17,8 +17,8 @@ return {
                 icons = {
                     glyphs = {
                         folder = {
-                            arrow_closed = "=>",
-                            arrow_open = "<="
+                            arrow_closed = "+",
+                            arrow_open = "-"
                         }
                     }
                 }
@@ -38,18 +38,7 @@ return {
             }
         }) 
         local keymap = vim.keymap
-        keymap.set("n", "<cmd>tree<CR>", "<cmd>NvimTreeToggle<CR>", {
-            desc = "Toggle file explorer"
-        })
-        keymap.set("n", "treeFind", "<cmd>NvimTreeFindFileToggle<CR>", {
-            desc = "Toggle file explorer on current file"
-        })
-        keymap.set("n", "treeCollapse", "<cmd>NvimTreeCollapse<CR>", {
-            desc = "Collapse file explorer"
-        })
-        keymap.set("n", "treeRefresh", "<cmd>NvimTreeRefresh<CR>", {
-            desc = "Refresh file explorer"
-        })
+        
 
     end
 }

@@ -9,7 +9,7 @@ return {
         "williamboman/mason-lspconfig.nvim", 
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "tsserver"}
+                ensure_installed = { "tsserver" }
             })
         end
     },
@@ -18,6 +18,7 @@ return {
         config = function()
             local lspconfig = require("lspconfig")
             lspconfig.tsserver.setup({})
+            vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
         end
-        }
+    },
 }
