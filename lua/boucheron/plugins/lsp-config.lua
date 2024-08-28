@@ -14,10 +14,15 @@ return {
         end
     },
     {
-        "neovim/nvim-lspconfig", 
-        config = function()
-            local lspconfig = require("lspconfig")
-            lspconfig.tsserver.setup({})
+        "neovim/nvim-lspconfig",
+    lazy = false,
+    config = function()
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+      local lspconfig = require("lspconfig")
+      lspconfig.tsserver.setup({
+        capabilities = capabilities
+      })
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
         end
     },
